@@ -53,10 +53,14 @@ class MinitestPracticeTest < Minitest::Test
   end
 
   def test_fizz_buzz
-    assert@main.fizz_buzz(3) == "Fizz", "3 is Fizz"
-    assert@main.fizz_buzz(5) == "Buzz", "5 is Buzz"
-    assert@main.fizz_buzz(15) == "FizzBuzz", "15 is FizzBuzz"
     assert_nil@main.fizz_buzz(2), "2 is not FizzBusz"
+    assert_equal "Fizz", @main.fizz_buzz(3), "3 is Fizz"
+    assert_equal "Buzz", @main.fizz_buzz(5), "5 is Buzz"
+    assert_equal "FizzBuzz", @main.fizz_buzz(15), "15 is FizzBuzz"
+    assert_equal "FizzBuzz", @main.fizz_buzz(105), "105 is FizzBuzz"
+    assert_equal "Buzz", @main.fizz_buzz(115), "123 is Fizz"
+    assert_equal "Fizz", @main.fizz_buzz(123), "123 is Fizz"
+    assert_nil@main.fizz_buzz(124), "124 is not FizzBusz"
   end
 
   def test_hello
