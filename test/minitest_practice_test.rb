@@ -45,8 +45,8 @@ class MinitestPracticeTest < Minitest::Test
   end
 
   def test_divide
-    assert@main.divide(10, 2) == 5, "10 / 2 is 5"
-    assert@main.divide(11, 2) ==  5, "11 / 2 is 5"
+    assert_equal 5, @main.divide(10, 2), "10 / 2 = 5"
+    assert_equal 5, @main.divide(11, 2), "11 / 2 = 5"
     assert_raises ZeroDivisionError do 
       @main.divide(10, 0)
     end
