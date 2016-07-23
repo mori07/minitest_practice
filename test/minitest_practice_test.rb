@@ -39,8 +39,8 @@ class MinitestPracticeTest < Minitest::Test
 
   def test_enough_length?
     assert_equal false, @main.enough_length?("ab"), "length of ab is 2"
-    assert_equal false, @main.enough_length?("abc"), "length of abc is 3"
-    assert_equal false, @main.enough_length?("abcdefgh"), "length of abcdefgh is 8"
+    assert_equal true, @main.enough_length?("abc"), "length of abc is 3"
+    assert_equal true, @main.enough_length?("abcdefgh"), "length of abcdefgh is 8"
     assert_equal false, @main.enough_length?("abcdefghi"), "length of abcdefghi is 9"
   end
 
