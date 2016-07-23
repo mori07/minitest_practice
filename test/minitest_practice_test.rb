@@ -26,6 +26,7 @@ class MinitestPracticeTest < Minitest::Test
   end
 
   def test_check_number?
+    refute@main.check_number?(100), "100 is not ok"
     assert@main.check_number?(1234), "1234 is ok"
     assert@main.check_number?(9998), "9998 is ok"
     refute@main.check_number?(1235), "1235 in not ok"
