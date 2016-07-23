@@ -26,12 +26,15 @@ class MinitestPracticeTest < Minitest::Test
   end
 
   def test_check_number?
-    refute@main.check_number?(100), "100 is not ok"
-    assert@main.check_number?(1234), "1234 is ok"
-    assert@main.check_number?(9998), "9998 is ok"
-    refute@main.check_number?(1235), "1235 in not ok"
-    refute@main.check_number?(0234), "0234 in not ok"
-    refute@main.check_number?(12344), "12344 in not ok"
+    assert_equal false, @main.check_number?(998), "998 is not ok"
+    assert_equal false, @main.check_number?(999), "999 is not ok"
+    assert_equal true, @main.check_number?(1000), "1000 is ok"
+    assert_equal false, @main.check_number?(1001), "1001 is not ok"
+    assert_equal true, @main.check_number?(9998), "9998 is ok"
+    assert_equal false, @main.check_number?(9999), "9999 is not ok"
+    assert_equal false, @main.check_number?(10000), "10000 is not ok"
+    assert_equal false, @main.check_number?(10001), "10001 is not ok"
+    assert_equal false, @main.check_number?(0234), "0234 is not ok"
   end
 
   def test_enough_length?
